@@ -13,6 +13,7 @@ public class main extends Application {
 
     {
         launch(args);
+        System.out.println("Checking if it works");
     }
 
     @Override
