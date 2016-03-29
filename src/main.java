@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -79,7 +81,9 @@ public class main extends Application
         button2.setOnAction(e-> window.setScene(Sign_up_Scene));
 
 
-
+        /*
+        the go back button goes from scene of log in and sign up to the start scene
+         */
         button_go_Back = new Button("Go Back");
         button_go_Back.setTranslateX(350);
         button_go_Back.setTranslateY(-336);
@@ -121,9 +125,22 @@ public class main extends Application
         /*
         layout for sign up scene
          */
+        Label label_name = new Label("Name:");
+        TextField textField_name = new TextField();
+        textField_name.setTranslateY(100);
+        textField_name.setTranslateX(40);
+
+        textField_name.setPrefWidth(10);
+        textField_name.setMinWidth(40);
+        textField_name.setMaxWidth(100);
+        textField_name.setTranslateX(0);
+        textField_name.setTranslateY(0);
 
         StackPane layout_sign_up = new StackPane();
         layout_sign_up.getChildren().add(button_go_Back);
+        layout_sign_up.getChildren().add(label_name);
+        layout_sign_up.getChildren().add(textField_name);
+
         layout_sign_up.setStyle("-fx-background-color: lightslategray");
         Sign_up_Scene = new Scene(layout_sign_up,800,700);
 
