@@ -126,20 +126,20 @@ public class main extends Application
         layout for sign up scene
          */
         Label label_name = new Label("Name:");
+        label_name.setTranslateX(-330);
+        label_name.setTranslateY(-250);
         TextField textField_name = new TextField();
-        textField_name.setTranslateY(100);
-        textField_name.setTranslateX(40);
+        textField_name.setTranslateY(-250);
+        textField_name.setTranslateX(-250);
 
         textField_name.setPrefWidth(10);
         textField_name.setMinWidth(40);
         textField_name.setMaxWidth(100);
-        textField_name.setTranslateX(0);
-        textField_name.setTranslateY(0);
+
 
         StackPane layout_sign_up = new StackPane();
         layout_sign_up.getChildren().add(button_go_Back);
-        layout_sign_up.getChildren().add(label_name);
-        layout_sign_up.getChildren().add(textField_name);
+        layout_sign_up.getChildren().addAll(label_name,textField_name);
 
         layout_sign_up.setStyle("-fx-background-color: lightslategray");
         Sign_up_Scene = new Scene(layout_sign_up,800,700);
