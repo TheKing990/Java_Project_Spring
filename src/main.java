@@ -81,9 +81,13 @@ public class main extends Application
 
 
         button_go_Back = new Button("Go Back");
+        button_go_Back.setTranslateX(350);
+        button_go_Back.setTranslateY(-336);
         button_go_Back.setOnAction(e -> window.setScene(Scene1));
 
         button_go_Back2 = new Button("Go Back");
+        button_go_Back2.setTranslateX(350);
+        button_go_Back2.setTranslateY(-336);
         button_go_Back2.setOnAction(e -> window.setScene(Scene1));
 
 
