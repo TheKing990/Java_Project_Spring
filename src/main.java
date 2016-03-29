@@ -1,17 +1,24 @@
+import com.sun.corba.se.pept.transport.EventHandler;
 import com.sun.tools.javac.jvm.ClassFile;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
-public class main extends Application {
+
+public class main extends Application
+{
 
     Stage window;           // not sure if i need to declare them here , since text work
-    Button button1,button2;
+    Button button1,button2,button_go_Back,button_go_Back2;
+    Scene Log_in_Scene, Sign_up_Scene, Scene1;
+    FlowPane pane1, pane2;
 
 
     public static void main(String[] args)
@@ -35,8 +42,8 @@ public class main extends Application {
 
 
 
-        button2 = new Button("log in");
-        button1 = new Button("sign up");
+        button1 = new Button("log in");
+        button2 = new Button("sign up");
 
 
         /*
@@ -65,6 +72,20 @@ public class main extends Application {
         version.setTranslateX(300);
         version.setTranslateY(340);
 
+        /*
+        change scene
+         */
+        button1.setOnAction(e -> window.setScene(Log_in_Scene));
+        button2.setOnAction(e-> window.setScene(Sign_up_Scene));
+
+
+
+        button_go_Back = new Button("Go Back");
+        button_go_Back.setOnAction(e -> window.setScene(Scene1));
+
+        button_go_Back2 = new Button("Go Back");
+        button_go_Back2.setOnAction(e -> window.setScene(Scene1));
+
 
 
 
@@ -77,14 +98,38 @@ public class main extends Application {
         layout.getChildren().add(t);
         layout.getChildren().add(version);
         layout.setStyle("-fx-background-color: lightslategray");
-        Scene scene = new Scene(layout, 800, 700);
+        Scene1 = new Scene(layout, 800, 700);
+
+
+
+
+        /*
+        layout for scene for log in
+         */
+
+        StackPane layout_log_ing = new StackPane();
+        layout_log_ing.getChildren().add(button_go_Back2);
+        layout_log_ing.setStyle("-fx-background-color: lightslategray");
+        Log_in_Scene = new Scene(layout_log_ing,800,700);
+
+
+
+        /*
+        layout for sign up scene
+         */
+
+        StackPane layout_sign_up = new StackPane();
+        layout_sign_up.getChildren().add(button_go_Back);
+        layout_sign_up.setStyle("-fx-background-color: lightslategray");
+        Sign_up_Scene = new Scene(layout_sign_up,800,700);
 
 
 
 
 
 
-        window.setScene(scene);
+        window.setScene(Scene1);
         window.show();
     }
+
 }
