@@ -98,7 +98,7 @@ public class main extends Application
 
 
         /*
-        the getChildren add stuff to the screen
+        the getChildren add stuff to the start up screen
          */
         StackPane layout = new StackPane();
         layout.getChildren().add(button2);
@@ -125,22 +125,61 @@ public class main extends Application
         /*
         layout for sign up scene
          */
+
+        /*
+        label for first name and a textfield for it
+         */
         Label label_name = new Label("Name:");
         label_name.setTranslateX(-330);
         label_name.setTranslateY(-250);
+
         TextField textField_name = new TextField();
         textField_name.setTranslateY(-250);
-        textField_name.setTranslateX(-250);
+        textField_name.setTranslateX(-245);
 
         textField_name.setPrefWidth(10);
         textField_name.setMinWidth(40);
         textField_name.setMaxWidth(100);
+        ///////////////////////////////
+
+        /*
+        last name
+         */
+        Label label_last_name = new Label("Last Name: ");
+        label_last_name.setTranslateX(-330);
+        label_last_name.setTranslateY(-220);
+
+        TextField textField__last_name = new TextField();
+        textField__last_name.setTranslateY(-220);
+        textField__last_name.setTranslateX(-245);
+
+        textField__last_name.setPrefWidth(10);
+        textField__last_name.setMinWidth(40);
+        textField__last_name.setMaxWidth(100);
+        ////////////////////////////////////////
+
+        /*
+        username textfield and username label
+         */
+        Label label_user_name = new Label("Username: ");
+        label_user_name.setTranslateX(-330);
+        label_user_name.setTranslateY(-190);
+
+        TextField textField_user_name = new TextField();
+        textField_user_name.setTranslateY(-190);
+        textField_user_name.setTranslateX(-245);
+
+        textField_user_name.setPrefWidth(10);
+        textField_user_name.setMinWidth(40);
+        textField_user_name.setMaxWidth(100);
 
 
+        /////////////////////////////////////////
         StackPane layout_sign_up = new StackPane();
         layout_sign_up.getChildren().add(button_go_Back);
+        layout_sign_up.getChildren().addAll(label_last_name,textField__last_name);
         layout_sign_up.getChildren().addAll(label_name,textField_name);
-
+        layout_sign_up.getChildren().addAll(label_user_name,textField_user_name);
         layout_sign_up.setStyle("-fx-background-color: lightslategray");
         Sign_up_Scene = new Scene(layout_sign_up,800,700);
 
