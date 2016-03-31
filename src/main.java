@@ -174,12 +174,32 @@ public class main extends Application
         textField_user_name.setMaxWidth(100);
 
 
+        /*
+        password
+         */
+
+        Label label_password= new Label("Password: ");
+        label_password.setTranslateX(-330);
+        label_password.setTranslateY(-160);
+
+        TextField textField_password = new TextField();
+        textField_password.setTranslateY(-160);
+        textField_password.setTranslateX(-245);
+
+        textField_password.setPrefWidth(10);
+        textField_password.setMinWidth(40);
+        textField_password.setMaxWidth(100);
+
+
+
+
         /////////////////////////////////////////
         StackPane layout_sign_up = new StackPane();
         layout_sign_up.getChildren().add(button_go_Back);
         layout_sign_up.getChildren().addAll(label_last_name,textField__last_name);
         layout_sign_up.getChildren().addAll(label_name,textField_name);
         layout_sign_up.getChildren().addAll(label_user_name,textField_user_name);
+        layout_sign_up.getChildren().addAll(label_password,textField_password);
         layout_sign_up.setStyle("-fx-background-color: lightslategray");
         Sign_up_Scene = new Scene(layout_sign_up,800,700);
 
